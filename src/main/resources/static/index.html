@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>slimSwagger</title>
+
+    <link href="bootstrap-3.3.7-dist/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap-3.3.7-dist/css/indexStyle.css" rel="stylesheet">
+    <link href="bootstrap-3.3.7-dist/css/jquery.jsonview.css" rel="stylesheet">
+
+    <script src="bootstrap-3.3.7-dist/js/jquery.min.js"></script>
+    <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="bootstrap-3.3.7-dist/js/action.js"></script>
+    <script src="bootstrap-3.3.7-dist/js/jquery.jsonview.js"></script>
+
+
+    <style type="text/css">
+        body, select, textarea {
+            font-size: 1.1em
+        }
+
+        body, html, input {
+            font-family: Consolas;
+        }
+    </style>
+
+</head>
+<body>
+<div class="header">
+    <span>slimSwagger</span>
+    <button type="button" id="reloadApi" class="btn btn-info">接口重载</button>
+</div>
+
+<div class="header-content">
+    <h2>农经云接口文档</h2>
+
+    <h5>[ BASE URL :<span>测试的/</span>]</h5>
+
+    <h3>随便的一段描述</h3>
+</div>
+
+<div class="container">
+
+
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <span class="tags">用户信息1</span>
+            <span class="path-description">对用戶信息的相关接口</span>
+        </div>
+
+
+        <div class="panel panel-success">
+            <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#jiekou1">
+                <span class="label label-success">POST</span>
+                <span class="url-path">/user/info/id</span>
+                <span class="path-description">根据ID查找用户信息</span>
+            </div>
+
+            <div id="jiekou1" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>参数名</th>
+                            <th>值</th>
+                            <th>参数说明</th>
+                            <th>是否必传</th>
+                            <th>参数类型</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Tanmay</td>
+                            <td>
+                                <input type="text" class="form-control" placeholder="输入值" id="mail1" name="email">
+                            </td>
+                            <td>560001</td>
+                            <td>是</td>
+                            <td>String</td>
+                        </tr>
+                        <tr>
+                            <td>Sachin</td>
+                            <td>
+                                <input type="text" class="form-control" placeholder="输入值" id="mail22" name="email">
+                            </td>
+                            <td>400003</td>
+                            <td>是</td>
+                            <td>String</td>
+                        </tr>
+                        <tr>
+                            <td>Uma</td>
+                            <td>
+                                <input type="text" class="form-control" placeholder="输入值" id="mail33" name="email">
+                            </td>
+                            <td>411027</td>
+                            <td>是</td>
+                            <td>String</td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <button type="button" id="excute" class="btn btn-success">执行</button>
+
+                    <div class="form-group">
+                        <label>结果:</label>
+                        <!--<textarea class="form-control" rows="5"></textarea>-->
+                        <div id="textareaDiv">我是显示的结果</div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="panel panel-info">
+            <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#jiekou2">
+                <span class="label label-success">POST</span>
+                <span class="url-path">/user/info/id</span>
+                <span class="path-description">根据ID查找用户信息</span>
+            </div>
+            <div id="jiekou2" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <table class="table table-striped">
+                        <!-- <caption></caption>-->
+                        <thead>
+                        <tr>
+                            <th>参数名</th>
+                            <th>值</th>
+                            <th>参数说明</th>
+                            <th>是否必传</th>
+                            <th>参数类型</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Tanmay</td>
+                            <td>
+                                <input type="text" class="form-control" placeholder="输入值" id="mail11" name="email">
+                            </td>
+                            <td>560001</td>
+                            <td>是</td>
+                            <td>String</td>
+                        </tr>
+                        <tr>
+                            <td>Sachin</td>
+                            <td>
+                                <input type="text" class="form-control" placeholder="输入值" id="mail222" name="email">
+                            </td>
+                            <td>400003</td>
+                            <td>是</td>
+                            <td>String</td>
+                        </tr>
+                        <tr>
+                            <td>Uma</td>
+                            <td>
+                                <input type="text" class="form-control" placeholder="输入值" id="mail333" name="email">
+                            </td>
+                            <td>411027</td>
+                            <td>是</td>
+                            <td>String</td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <button type="button" class="btn btn-success">执行</button>
+
+                    <div class="form-group">
+                        <label>结果:</label>
+                        <textarea class="form-control" rows="5"></textarea>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-success">
+            <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#jiekou3">
+                <span class="label label-success">POST</span>
+                <span class="url-path">/user/info/id</span>
+                <span class="path-description">根据ID查找用户信息</span>
+            </div>
+            <div id="jiekou3" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <table class="table table-striped">
+                        <!-- <caption></caption>-->
+                        <thead>
+                        <tr>
+                            <th>参数名</th>
+                            <th>值</th>
+                            <th>参数说明</th>
+                            <th>是否必传</th>
+                            <th>参数类型</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Tanmay</td>
+                            <td>
+                                <input type="text" class="form-control" placeholder="输入值" id="mail122" name="email">
+                            </td>
+                            <td>560001</td>
+                            <td>是</td>
+                            <td>String</td>
+                        </tr>
+                        <tr>
+                            <td>Sachin</td>
+                            <td>
+                                <input type="text" class="form-control" placeholder="输入值" id="mail2211"
+                                       name="email">
+                            </td>
+                            <td>400003</td>
+                            <td>是</td>
+                            <td>String</td>
+                        </tr>
+                        <tr>
+                            <td>Uma</td>
+                            <td>
+                                <input type="text" class="form-control" placeholder="输入值" id="mail3311"
+                                       name="email">
+                            </td>
+                            <td>411027</td>
+                            <td>是</td>
+                            <td>String</td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <button type="button" class="btn btn-success">执行</button>
+
+                    <div class="form-group">
+                        <label>结果:</label>
+                        <textarea class="form-control" rows="5"></textarea>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!--  </div>-->
+
+    </div>
+
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <span class="tags">用户信息</span>
+            <span class="path-description">对用戶信息的相关接口</span>
+        </div>
+
+        <!--  <div id="enterpricemodel" class="panel-collapse collapse">-->
+
+
+        <div class="panel panel-success">
+            <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#jiekou4">
+                <span class="label label-success">POST</span>
+                <span class="url-path">/user/info/id</span>
+                <span class="path-description">根据ID查找用户信息</span>
+            </div>
+
+            <div id="jiekou4" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <table class="table table-striped">
+                        <!-- <caption></caption>-->
+                        <thead>
+                        <tr>
+                            <th>参数名</th>
+                            <th>值</th>
+                            <th>参数说明</th>
+                            <th>是否必传</th>
+                            <th>参数类型</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Tanmay</td>
+                            <td>
+                                <input type="text" class="form-control" placeholder="输入值" id="mail123" name="email">
+                            </td>
+                            <td>560001</td>
+                            <td>是</td>
+                            <td>String</td>
+                        </tr>
+                        <tr>
+                            <td>Sachin</td>
+                            <td>
+                                <input type="text" class="form-control" placeholder="输入值" id="mail232" name="email">
+                            </td>
+                            <td>400003</td>
+                            <td>是</td>
+                            <td>String</td>
+                        </tr>
+                        <tr>
+                            <td>Uma</td>
+                            <td>
+                                <input type="text" class="form-control" placeholder="输入值" id="mail3333"
+                                       name="email">
+                            </td>
+                            <td>411027</td>
+                            <td>是</td>
+                            <td>String</td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <button type="button" class="btn btn-success">执行</button>
+
+                    <div class="form-group">
+                        <label>结果:</label>
+                        <textarea class="form-control" rows="5"></textarea>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="panel panel-info">
+            <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#jiekou5">
+                <span class="label label-success">POST</span>
+                <span class="url-path">/user/info/id</span>
+                <span class="path-description">根据ID查找用户信息</span>
+            </div>
+
+            <div id="jiekou5" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <table class="table table-striped">
+                        <!-- <caption></caption>-->
+                        <thead>
+                        <tr>
+                            <th>参数名</th>
+                            <th>值</th>
+                            <th>参数说明</th>
+                            <th>是否必传</th>
+                            <th>参数类型</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Tanmay</td>
+                            <td>
+                                <input type="text" class="form-control" placeholder="输入值" id="mail1111"
+                                       name="email">
+                            </td>
+                            <td>560001</td>
+                            <td>是</td>
+                            <td>String</td>
+                        </tr>
+                        <tr>
+                            <td>Sachin</td>
+                            <td>
+                                <input type="text" class="form-control" placeholder="输入值" id="mail2522"
+                                       name="email">
+                            </td>
+                            <td>400003</td>
+                            <td>是</td>
+                            <td>String</td>
+                        </tr>
+                        <tr>
+                            <td>Uma</td>
+                            <td>
+                                <input type="text" class="form-control" placeholder="输入值" id="mail3533"
+                                       name="email">
+                            </td>
+                            <td>411027</td>
+                            <td>是</td>
+                            <td>String</td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <button type="button" class="btn btn-success">执行</button>
+
+                    <div class="form-group">
+                        <label>结果:</label>
+                        <textarea class="form-control" rows="5"></textarea>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-success">
+            <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#jiekou6">
+                <span class="label label-success">POST</span>
+                <span class="url-path">/user/info/id</span>
+                <span class="path-description">根据ID查找用户信息</span>
+            </div>
+
+            <div id="jiekou6" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <table class="table table-striped">
+                        <!-- <caption></caption>-->
+                        <thead>
+                        <tr>
+                            <th>参数名</th>
+                            <th>值</th>
+                            <th>参数说明</th>
+                            <th>是否必传</th>
+                            <th>参数类型</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Tanmay</td>
+                            <td>
+                                <input type="text" class="form-control" placeholder="输入值" id="mail1422"
+                                       name="email">
+                            </td>
+                            <td>560001</td>
+                            <td>是</td>
+                            <td>String</td>
+                        </tr>
+                        <tr>
+                            <td>Sachin</td>
+                            <td>
+                                <input type="text" class="form-control" placeholder="输入值" id="mail22511"
+                                       name="email">
+                            </td>
+                            <td>400003</td>
+                            <td>是</td>
+                            <td>String</td>
+                        </tr>
+                        <tr>
+                            <td>Uma</td>
+                            <td>
+                                <input type="text" class="form-control" placeholder="输入值" id="mail35311"
+                                       name="email">
+                            </td>
+                            <td>411027</td>
+                            <td>是</td>
+                            <td>String</td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <button type="button" class="btn btn-success">执行</button>
+
+                    <div class="form-group">
+                        <label>结果:</label>
+                        <textarea class="form-control" rows="5"></textarea>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!--  </div>-->
+    </div>
+
+
+</div>
+
+
+<div class="footer">
+    design by slm
+</div>
+
+
+</body>
+
+<script>
+
+
+</script>
+
+</html>

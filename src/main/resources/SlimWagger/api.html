@@ -1,0 +1,172 @@
+﻿<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="msapplication-TileColor" content="#0061da">
+<meta name="theme-color" content="#1643a3">
+<meta name="apple-mobile-web-app-status-bar-style"
+	content="black-translucent">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+<!-- 自己导入 -->
+<link href="assets\css\bootstrap-theme.min.css" rel="stylesheet">
+<link href="assets\css\bootstrap.min.css" rel="stylesheet">
+<link href="assets\css\jquery.jsonview.css" rel="stylesheet">
+
+
+
+
+<!-- Title -->
+<title>API接口信息</title>
+<link rel="stylesheet" href="assets\fonts\fonts\font-awesome.min.css">
+
+<!-- Sidemenu Css -->
+<link href="assets\plugins\fullside-menu\css\style.css" rel="stylesheet">
+<link href="assets\plugins\fullside-menu\waves.min.css" rel="stylesheet">
+
+<!-- Dashboard Css -->
+<link href="assets\css\dashboard.css" rel="stylesheet">
+
+<!-- Morris.js Charts Plugin -->
+<link href="assets\plugins\morris\morris.css" rel="stylesheet">
+
+<!-- Custom scroll bar css-->
+<link href="assets\plugins\scroll-bar\jquery.mCustomScrollbar.css"
+	rel="stylesheet">
+
+<!---Font icons-->
+<link href="assets\css\icons.css" rel="stylesheet">
+
+
+</head>
+
+
+
+<body class="">
+
+
+	<div class="page-main">
+
+		<!-- ==============头部============================ -->
+		<div class="content-area">
+
+			<!-- 菜单栏 -->
+			<div class="page-header">
+				<h4 class="page-title" id="page-title"></h4>
+				<div>
+					<button type="button" id="api_list" class="btn btn-light">接口列表</button>
+				</div>
+			</div>
+
+
+
+
+			<div class="card">
+
+				<div class="card-header">
+					<h4 class="card-title" id="api_name"
+						style="color: #8A2BE2; font-weight: bold;">接口列表</h4>
+				</div>
+
+				<div id="loadingDiv" style="display: none;">
+					<div id="over"
+						style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: #f5f5f5; opacity: 0.5; z-index: 1000;"></div>
+					<div id="layout"
+						style="position: absolute; top: 40%; left: 40%; width: 20%; height: 20%; z-index: 1001; text-align: center; width: 100px; height: 100px;">
+						<img src="assets\img\loading.gif" />
+					</div>
+				</div>
+
+
+
+
+				<!-- ============参数框============================ -->
+				<div class="card-body">
+
+					<table class="table table-striped">
+
+						<thead>
+							<tr>
+								<th><h4 style="font-weight: bold">API</h4></th>
+								<th><h4 style="font-weight: bold">api说明</h4></th>
+								<th><h4 style="font-weight: bold">类名称</h4></th>
+								<th><h4 style="font-weight: bold">请求次数</h4></th>
+								<th><h4 style="font-weight: bold">花费时间</h4></th>
+							</tr>
+						</thead>
+
+
+
+						<tbody id="api_table">
+							<tr>
+								<td><h4>无</h4></td>
+								<td><h4>无</h4></td>
+								<td><h4>无</h4></td>
+								<td><h4>无</h4></td>
+								<td><h4>无</h4></td>
+							</tr>
+						</tbody>
+
+					</table>
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+
+	<!-- ====================底部================ -->
+	<!--footer-->
+	<footer class="footer">
+		<div class="container">
+			<div class="row align-items-center flex-row-reverse">
+				<div class="col-md-12 col-sm-12 mt-3 mt-lg-0 text-center">
+					Copyright © 2020 Designed by bootstrap and slm All rights reserved.</div>
+			</div>
+		</div>
+	</footer>
+	<!-- End Footer-->
+
+
+
+
+
+	<!-- Dashboard Core -->
+	<script src="assets\js\vendors\jquery-3.2.1.min.js"></script>
+	<script src="assets\js\vendors\bootstrap.bundle.min.js"></script>
+	<script src="assets\js\vendors\jquery.sparkline.min.js"></script>
+	<script src="assets\js\vendors\selectize.min.js"></script>
+	<script src="assets\js\vendors\jquery.tablesorter.min.js"></script>
+	<script src="assets\js\vendors\circle-progress.min.js"></script>
+	<script src="assets\plugins\rating\jquery.rating-stars.js"></script>
+
+	<!-- 动作 -->
+	<script type="text/javascript" src="assets\js\action.js"></script>
+	<script type="text/javascript" src="assets\js\apiAction.js"></script>
+
+	<!-- Fullside-menu Js-->
+	<script src="assets\plugins\fullside-menu\jquery.slimscroll.min.js"></script>
+	<script src="assets\plugins\fullside-menu\waves.min.js"></script>
+
+	<!-- Dashboard Core -->
+	<script src="assets\js\index1.js"></script>
+
+	<!--Morris.js Charts Plugin -->
+	<script src="assets\plugins\morris\raphael-min.js"></script>
+	<script src="assets\plugins\morris\morris.js"></script>
+
+	<!-- Custom scroll bar Js-->
+	<script
+		src="assets\plugins\scroll-bar\jquery.mCustomScrollbar.concat.min.js"></script>
+
+	<!-- Custom Js-->
+	<script src="assets\js\custom.js"></script>
+</body>
+</html>

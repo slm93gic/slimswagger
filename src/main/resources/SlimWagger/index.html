@@ -1,0 +1,308 @@
+﻿<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="msapplication-TileColor" content="#0061da">
+<meta name="theme-color" content="#1643a3">
+<meta name="apple-mobile-web-app-status-bar-style"
+	content="black-translucent">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+<!-- 自己导入 -->
+<link href="assets\css\bootstrap-theme.min.css" rel="stylesheet">
+<link href="assets\css\bootstrap.min.css" rel="stylesheet">
+<link href="assets\css\jquery.jsonview.css" rel="stylesheet">
+
+<!-- 动作 -->
+<script type="text/javascript" src="assets\js\action.js"></script>
+
+
+<!-- Title -->
+<title>API接口列表</title>
+<link rel="stylesheet" href="assets\fonts\fonts\font-awesome.min.css">
+
+<!-- Sidemenu Css -->
+<link href="assets\plugins\fullside-menu\css\style.css" rel="stylesheet">
+<link href="assets\plugins\fullside-menu\waves.min.css" rel="stylesheet">
+
+<!-- Dashboard Css -->
+<link href="assets\css\dashboard.css" rel="stylesheet">
+
+<!-- Morris.js Charts Plugin -->
+<link href="assets\plugins\morris\morris.css" rel="stylesheet">
+
+<!-- Custom scroll bar css-->
+<link href="assets\plugins\scroll-bar\jquery.mCustomScrollbar.css"
+	rel="stylesheet">
+
+<!---Font icons-->
+<link href="assets\css\icons.css" rel="stylesheet">
+
+<style>
+pre {
+	outline: 1px solid #ccc;
+	padding: 2px;
+	margin: 2px;
+}
+
+.string {
+	color: green;
+	/* color: #3AB54A; */
+} /*字符串的样式*/
+.number {
+	color: blue;
+} /*数字的样式*/
+.boolean {
+	color: blue;
+} /*布尔型数据的样式*/
+.null {
+	color: #F1592A;
+} /*null值的样式*/
+.key {
+	color: #92278F;
+} /*key值的样式*/
+th {
+	font-weight: bold;
+}
+</style>
+
+</head>
+<body class="">
+
+
+	<div class="page-main">
+		<!-- 
+	 		<div class="app-header1 header py-1 d-flex">
+			<div class="container-fluid">
+				<div class="d-flex">
+					<div class="menu-toggle-button">
+						<a class="nav-link wave-effect" href="#" id="sidebarCollapse">
+							<span class="fa fa-bars"></span>
+						</a>
+					</div>
+
+				</div>
+			</div>
+		</div> -->
+
+
+		<div class="wrapper">
+
+
+
+			<!-- Sidebar Holder -->
+			<nav id="sidebar" class="nav-sidebar">
+				<ul class="list-unstyled components" id="accordion">
+
+					<!-- ========================================================= -->
+					<div class="user-profile">
+						<div class="dropdown user-pro-body">
+
+							<div class="mb-2">
+								<a href="#" class="" data-toggle="" aria-haspopup="true"
+									aria-expanded="false"> <span class="font-weight-semibold"
+									id="page_desc"><h4></h4></span>
+								</a>
+							</div>
+						</div>
+					</div>
+
+					<!-- ========================核心接口位置======================= -->
+
+					<!-- <li class=""><a href="#pageSubmenu"
+							class="accordion-toggle wave-effect" data-toggle="collapse"
+							aria-expanded="false"><i class="fa fa-area-chart mr-2"></i>
+								Charts1</a>
+							<ul class="collapse list-unstyled" id="pageSubmenu"
+								data-parent="#accordion">
+								<li><a href="chart-chartist.html">Chartjs Charts </a></li>
+								<li><a href="chart-dygraph.html">Dygraph Charts</a></li>
+								<li><a href="chart-echart.html">Echart Charts</a></li>
+								<li><a href="chart-flot.html">Flot Charts</a></li>
+								<li><a href="chart-high.html">High Charts</a></li>
+								<li><a href="chart-nvd3.html">Nvd3 Charts</a></li>
+								<li><a href="chart-morris.html">Morris Charts</a></li>
+							</ul></li>
+ -->
+
+
+					<!-- ====================================== -->
+
+				</ul>
+			</nav>
+
+			<div class="content-area">
+				<div class="page-header">
+					<h4 class="page-title" id="page-title"></h4>
+					<div>
+						<button type="button" id="reloadApi" class="btn btn-light">接口重载</button>
+						<button type="button" id="tipApi" class="btn btn-light">接口管理</button>
+					</div>
+				</div>
+
+				<!-- ========================================== -->
+				<!-- 这里把框加上 -->
+				<div class="row">
+					<div class="col-lg-12 col-md-6">
+						<div class="card">
+
+							<div class="card-header">
+								<h4 class="card-title" id="api_name"
+									style="color: #8A2BE2; font-weight: bold;">接口的名称</h4>
+							</div>
+
+							<div id="loadingDiv" style="display: none;">
+								<div id="over"
+									style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: #f5f5f5; opacity: 0.5; z-index: 1000;"></div>
+								<div id="layout"
+									style="position: absolute; top: 40%; left: 40%; width: 20%; height: 20%; z-index: 1001; text-align: center; width: 100px; height: 100px;">
+									<img src="assets\img\loading.gif" />
+								</div>
+							</div>
+
+
+
+							<div class="card-header">
+								<h2 class="label label-success" id="api_meth"></h2>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<h4 class="url-path" id="api_path">无</h4>
+							</div>
+
+
+							<!-- ============参数框============================ -->
+							<div class="card-body">
+								<table class="table table-striped">
+									<thead>
+										<tr>
+											<th><h4 style="font-weight: bold">参数名</h4></th>
+											<th><h4 style="font-weight: bold">值</h4></th>
+											<th><h4 style="font-weight: bold">参数说明</h4></th>
+											<th><h4 style="font-weight: bold">是否必传</h4></th>
+											<th><h4 style="font-weight: bold">参数类型</h4></th>
+										</tr>
+									</thead>
+
+
+
+									<tbody id="api_params">
+										<tr>
+											<td><h4>无</h4></td>
+
+											<td><input type="text" class="form-control"
+												placeholder="输入值" id="mail1" name="email"></td>
+
+
+											<td><h4>无</h4></td>
+
+											<td><h4>无</h4></td>
+
+											<td><h4>无</h4></td>
+										</tr>
+
+
+
+
+									</tbody>
+								</table>
+							</div>
+							<!-- ========================================== -->
+							<button type="button" id="excute" class="btn btn-primary"
+								style="font-weight: bold;">执&nbsp;&nbsp;&nbsp;行</button>
+							<!-- ======================================================== -->
+							<div class="card-body">
+
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<div class="form-group">
+									<label><h5 style="color: #8A2BE2; font-weight: bold;">GET请求路径:</h5></label>
+									<pre id="request_url" style="color: red; font-weight: bold;"></pre>
+								</div>
+
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+								<div class="form-group">
+
+									<label><h5 style="color: #8A2BE2; font-weight: bold;">
+											查询结果:&nbsp;&nbsp;&nbsp;
+											<sapn id="cost_time" style="color:black"></sapn>
+										</h5> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+
+									<button type="button" id="loadExplain" style="float: right;"
+										class="btn btn-light">
+										<h6 style="font-weight: bold">显示注解</h6>
+									</button>
+									<pre id="textareaDiv"></pre>
+
+
+
+
+								</div>
+							</div>
+
+
+
+						</div>
+					</div>
+				</div>
+				<!-- ==================================================== -->
+
+
+
+			</div>
+		</div>
+		<!-- ====================底部================ -->
+		<!--footer-->
+		<footer class="footer">
+			<div class="container">
+				<div class="row align-items-center flex-row-reverse">
+					<div class="col-md-12 col-sm-12 mt-3 mt-lg-0 text-center">
+						Copyright © 2020 Designed by bootstrap and slm All rights
+						reserved.</div>
+				</div>
+			</div>
+		</footer>
+		<!-- End Footer-->
+		<!-- ====================== -->
+
+
+	</div>
+
+
+	<!-- Dashboard Core -->
+	<script src="assets\js\vendors\jquery-3.2.1.min.js"></script>
+	<script src="assets\js\vendors\bootstrap.bundle.min.js"></script>
+	<script src="assets\js\vendors\jquery.sparkline.min.js"></script>
+	<script src="assets\js\vendors\selectize.min.js"></script>
+	<script src="assets\js\vendors\jquery.tablesorter.min.js"></script>
+	<script src="assets\js\vendors\circle-progress.min.js"></script>
+	<script src="assets\plugins\rating\jquery.rating-stars.js"></script>
+
+	<!-- 动作 -->
+	<script type="text/javascript" src="assets\js\action.js"></script>
+	<script type="text/javascript" src="assets\js\loading.js"></script>
+
+	<!-- Fullside-menu Js-->
+	<script src="assets\plugins\fullside-menu\jquery.slimscroll.min.js"></script>
+	<script src="assets\plugins\fullside-menu\waves.min.js"></script>
+
+	<!-- Dashboard Core -->
+	<script src="assets\js\index1.js"></script>
+
+	<!--Morris.js Charts Plugin -->
+	<script src="assets\plugins\morris\raphael-min.js"></script>
+	<script src="assets\plugins\morris\morris.js"></script>
+
+	<!-- Custom scroll bar Js-->
+	<script
+		src="assets\plugins\scroll-bar\jquery.mCustomScrollbar.concat.min.js"></script>
+
+	<!-- Custom Js-->
+	<script src="assets\js\custom.js"></script>
+</body>
+</html>

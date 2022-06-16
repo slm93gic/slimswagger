@@ -1,0 +1,81 @@
+
+body {
+    margin: 0;
+    border: 0;
+}
+
+.header {
+    width: 100%;
+    height: 50px;
+    background-color: #89BF04;
+}
+
+.header span {
+    font-size: 30px;
+    color: white;
+    margin-left: 20%;
+}
+
+
+.header-content h5, h2, h3 {
+    margin-left: 20%;
+}
+
+.footer {
+    margin-top: 20%;
+    width: 100%;
+    height: 50px;
+    background-color: #89BF04;
+}
+
+.footer div {
+    width: 100%;
+    height: 50px;
+    background-color: #89BF04;
+    margin: auto auto;
+
+}
+
+.url-path {
+    color: black;
+    font-size: 18px;
+    padding-left: 30px;
+    font-weight: bold;
+}
+
+.label-success {
+    font-size: 16px;
+}
+
+.path-description {
+    margin-right: 0px;
+    font-size: 14px;
+    float: right;
+    font-weight: bold;
+}
+
+.btn-success {
+    width: 100px;
+    float: right;
+}
+
+.form-group {
+    padding-top: 30px;
+}
+
+.table-striped {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.btn-info {
+    float: right;
+    margin-right: 20%;
+    margin-top: 8px;
+}
+
+#textareaDiv {
+    border: 1px solid grey;
+    width: 100%;
+    height: 200px;
+}
